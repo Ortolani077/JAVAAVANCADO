@@ -86,7 +86,7 @@ public class PrimeiraClasseJava {
 		 
 		 Aluno aluno4=new Aluno("Maria");
 		 
-		 Aluno aluno5=new Aluno("José", 50);
+		 Aluno aluno5=new Aluno("José..", 50);
 		 
 		 
 		 

@@ -155,7 +155,7 @@ public String getAlunoAprovado2() {
 		return "Aluno está aprovado";
 		
 	}else {
-		return "Aluno está reporvado";
+		return "Aluno está reporvado !!!!";
 	}
 	
 }
