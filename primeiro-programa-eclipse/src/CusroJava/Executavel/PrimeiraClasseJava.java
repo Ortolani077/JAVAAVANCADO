@@ -1,5 +1,7 @@
 package CusroJava.Executavel;
 
+import javax.swing.JOptionPane;
+
 import CusroJava.classes.Aluno;
 
 public class PrimeiraClasseJava {
@@ -7,22 +9,37 @@ public class PrimeiraClasseJava {
 	 public static void main(String[]args) {
 		 /*new Aluno() é uma instancia(criação de objeto)*/
 		/*aluno1 é uma referencia para o objeto Aluno*/
+		 String nome= JOptionPane.showInputDialog("Qual o nome do aluno? ");
+		 String Idade= JOptionPane.showInputDialog("Qual a idade do aluno? ");
+		 String DataNascimento= JOptionPane.showInputDialog("Qual data de nascimento do aluno? ");
+		 String RegistroGeral= JOptionPane.showInputDialog("Qual o RG do aluno? ");
+		 String NumeroCpf= JOptionPane.showInputDialog("Qual o CPF do aluno? ");
+		 String NomeMae= JOptionPane.showInputDialog("Qual o nome da mãe do aluno? ");
+		 String NomePai= JOptionPane.showInputDialog("Qual o nome do pai do aluno? ");
+		 String DataMatricula= JOptionPane.showInputDialog("Qual a data da matrícula? ");
+		 String SerieMatriculado= JOptionPane.showInputDialog("Qual a série matriculado? ");
+		 String NomeEscola= JOptionPane.showInputDialog("Qual o nome da Escola? ");
+		 String Nota1= JOptionPane.showInputDialog("Qual a Nota 1? ");
+		 String Nota2= JOptionPane.showInputDialog("Qual a Nota 2? ");
+		 String Nota3= JOptionPane.showInputDialog("Qual a Nota 3? ");
+		 String Nota4= JOptionPane.showInputDialog("Qual a Nota 4? ");
+		
 		 
 		 Aluno aluno1=new Aluno(); 
-		 aluno1.setNome("João da Silva");
-		aluno1.setIdade(50);
-		aluno1.setDataNascimento("10/10/1987");
-		aluno1.setRegistroGeral("40.650.669-2");
-		aluno1.setNumeroCpf("407.195.958-78");
-		aluno1.setNomeMae("Maria");
-		aluno1.setNomePai("Antônio");
-		aluno1.setDataMatricula("01/06/2005");
-		aluno1.setSerieMatriculado("5");
-		aluno1.setNomeEscola("Escola JDEV Treinamento");
-		aluno1.setNota1(90);
-		aluno1.setNota2(80.8);
-		aluno1.setNota3(70.9);
-		aluno1.setNota4(90.7);
+		 aluno1.setNome(nome);
+		aluno1.setIdade(Integer.valueOf(Idade));
+		aluno1.setDataNascimento(DataNascimento);
+		aluno1.setRegistroGeral(RegistroGeral);
+		aluno1.setNumeroCpf(NumeroCpf);
+		aluno1.setNomeMae(NomeMae);
+		aluno1.setNomePai(NomePai);
+		aluno1.setDataMatricula(DataMatricula);
+		aluno1.setSerieMatriculado(SerieMatriculado);
+		aluno1.setNomeEscola(NomeEscola);
+		aluno1.setNota1(Double.parseDouble(Nota1));
+		aluno1.setNota2(Double.parseDouble(Nota2));
+		aluno1.setNota3(Double.parseDouble(Nota3));
+		aluno1.setNota4(Double.parseDouble(Nota4));
 		
 		
 		 
