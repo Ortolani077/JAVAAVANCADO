@@ -1,5 +1,9 @@
 package CusroJava.classes;
 
+import java.util.ArrayList;
+
+import java.util.List;
+
 public class Aluno {
 	/*Esses são os atributos do Aluno*/
 	private String nome;
@@ -13,21 +17,22 @@ public class Aluno {
 	private String nomeEscola;
 	private String serieMatriculado;
 	
-	private Disciplina disciplina =new Disciplina();
-	public void setDisciplina(Disciplina disciplina) {
-		this.disciplina = disciplina;
+	
+	public List<Disciplina> disciplinas = new ArrayList<Disciplina>();
+	
+	
+	
+	
+	
+	public List<Disciplina> getDisciplinas() {
+		return disciplinas;
 	}
-	public Disciplina getDisciplina() {
-		return disciplina;
+
+	public void setDisciplinas(List<Disciplina> disciplinas) {
+		List<Disciplina> Disciplina = null;
+		this.disciplinas = Disciplina;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
+
 	public Aluno (String nomePadrao) {
 		
 		nome=nomePadrao;
@@ -50,6 +55,9 @@ public class Aluno {
 	
 	 */
 
+public Aluno() {
+		// TODO Auto-generated constructor stub
+	}
 public void setNome(String nome) {
 	
 	this.nome=nome;
@@ -115,9 +123,23 @@ public void setSerieMatriculado(String serieMatriculado) {
 
 /* metodo retorna media do aluno*/
 public double getMediaNota() {
-	return (disciplina.getNota1()+ disciplina.getNota2()+disciplina.getNota3()
+	double somaNotas=0.0;
+	for (Disciplina disciplina: disciplinas) {
+		
+		
+		somaNotas+= disciplina.getNota();
+		
+		
+			
+		
+		
+	}
+	return somaNotas / disciplinas.size();
 	
-	+disciplina.getNota4())/4;
+	
+	
+	
+
 	
 }
 
@@ -133,8 +155,12 @@ public boolean getAlunoAprovado() {
 }
 public String getAlunoAprovado2() {
 	double media = this.getMediaNota();
-	if(media>=70) {
+	if(media>=50) {
+		if(media>=70) {
 		return "Aluno está aprovado";
+		}else { 
+			return " Aluno em recuperação "; 
+		}
 		
 	}else {
 		return "Aluno está reporvado !!!!";
@@ -146,6 +172,13 @@ public String getAlunoAprovado2() {
 }
 
 
+@Override
+public String toString() {
+	return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
+			+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
+			+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
+			+ serieMatriculado +  "]";
+}
 @Override
 public int hashCode() {
 	final int prime = 31;

@@ -1,41 +1,48 @@
 package CusroJava.Executavel;
 
+import java.util.List;
+
 import javax.swing.JOptionPane;
 
+import com.sun.xml.internal.ws.client.dispatch.DispatchImpl;
+
 import CusroJava.classes.Aluno;
+import CusroJava.classes.Disciplina;
+import cursojava.constantes.StatusAluno;
+
+import java.util.ArrayList;
+import java.util.Iterator;
 
 public class PrimeiraClasseJava {
 
-	 public static void main(String[]args) {
-		 /*new Aluno() é uma instancia(criação de objeto)*/
-		/*aluno1 é uma referencia para o objeto Aluno*/
-		 String nome= JOptionPane.showInputDialog("Qual o nome do aluno? ");
-		 String Idade= JOptionPane.showInputDialog("Qual a idade do aluno? ");
+	public static <String> void main(String[]args) {
+		
+		List<Aluno> alunos= new ArrayList<Aluno>();
+		List<Aluno> alunosAprovados= new ArrayList<Aluno>();
+		List<Aluno> alunosRecuperacao= new ArrayList<Aluno>();
+		List<Aluno> alunosReprovados= new ArrayList<Aluno>();
+		
+		for(int qtd=1; qtd<=5; qtd++) {
+		
+		 /*new Aluno() ï¿½ uma instancia(criaï¿½ï¿½o de objeto)*/
+		/*aluno1 ï¿½ uma referencia para o objeto Aluno*/
+		 String nome= JOptionPane.showInputDialog("Qual o nome do aluno "+qtd+" ?");
+		/* String Idade= JOptionPane.showInputDialog("Qual a idade do aluno? ");
 		 String DataNascimento= JOptionPane.showInputDialog("Qual data de nascimento do aluno? ");
 		 String RegistroGeral= JOptionPane.showInputDialog("Qual o RG do aluno? ");
 		 String NumeroCpf= JOptionPane.showInputDialog("Qual o CPF do aluno? ");
-		 String NomeMae= JOptionPane.showInputDialog("Qual o nome da mãe do aluno? ");
+		 String NomeMae= JOptionPane.showInputDialog("Qual o nome da mï¿½e do aluno? ");
 		 String NomePai= JOptionPane.showInputDialog("Qual o nome do pai do aluno? ");
-		 String DataMatricula= JOptionPane.showInputDialog("Qual a data da matrícula? ");
-		 String SerieMatriculado= JOptionPane.showInputDialog("Qual a série matriculado? ");
+		 String DataMatricula= JOptionPane.showInputDialog("Qual a data da matrï¿½cula? ");
+		 String SerieMatriculado= JOptionPane.showInputDialog("Qual a sï¿½rie matriculado? ");
 		 String NomeEscola= JOptionPane.showInputDialog("Qual o nome da Escola? ");
-		
-		 String disciplina1= JOptionPane.showInputDialog("Disciplina1: ");
-		 String Nota1= JOptionPane.showInputDialog("Qual a Nota 1? ");
+		*/
+	
 		 
-		 String disciplina2= JOptionPane.showInputDialog("Disciplina 2: ");
-		 String Nota2= JOptionPane.showInputDialog("Qual a Nota 2? ");
-		 
-		 String disciplina3= JOptionPane.showInputDialog("Disciplina3: ");
-		 String Nota3= JOptionPane.showInputDialog("Qual a Nota 3? ");
-		 
-		 String disciplina4= JOptionPane.showInputDialog("Disciplina4: ");
-		 String Nota4= JOptionPane.showInputDialog("Qual a Nota 4? ");
-		
-		 
-		 Aluno aluno1=new Aluno(); 
-		aluno1.setNome(nome);
-		aluno1.setIdade(Integer.valueOf(Idade));
+		 Aluno aluno1 = new Aluno();
+	
+		 aluno1.setNome(nome);
+		/*aluno1.setIdade(Integer.valueOf(Idade));
 		aluno1.setDataNascimento(DataNascimento);
 		aluno1.setRegistroGeral(RegistroGeral);
 		aluno1.setNumeroCpf(NumeroCpf);
@@ -43,103 +50,105 @@ public class PrimeiraClasseJava {
 		aluno1.setNomePai(NomePai);
 		aluno1.setDataMatricula(DataMatricula);
 		aluno1.setSerieMatriculado(SerieMatriculado);
-		aluno1.setNomeEscola(NomeEscola);
+		aluno1.setNomeEscola(NomeEscola);*/
 	
-		
-		
-		aluno1.getDisciplina().setNota1(Double.parseDouble(Nota1));
-		aluno1.getDisciplina().setNota2(Double.parseDouble(Nota2));
-		aluno1.getDisciplina().setNota3(Double.parseDouble(Nota3));
-		aluno1.getDisciplina().setNota4(Double.parseDouble(Nota4));
-		
-		
-		aluno1.getDisciplina().setDisciplina1(disciplina1);
-		aluno1.getDisciplina().setDisciplina2(disciplina2);
-		aluno1.getDisciplina().setDisciplina3(disciplina3);
-		aluno1.getDisciplina().setDisciplina4(disciplina4);
-		
-		
-		
-		 
-		 System.out.println("Nome é: " +aluno1.getNome());
-		 System.out.println("A idade é: " +aluno1.getIdade());
-		 System.out.println("Data de nascimento: " +aluno1.getDataNascimento());
-		 System.out.println("Número do RG: " +aluno1.getRegistroGeral());
-		 System.out.println("Número do CPF: " +aluno1.getNumeroCpf());
-		 System.out.println("Nome da mãe: " +aluno1.getNomeMae());
-		 System.out.println("Nome do pai: " +aluno1.getNomePai());
-		 System.out.println("Data da matrícula: " +aluno1.getDataMatricula());
-		 System.out.println("Série matriculado: " +aluno1.getSerieMatriculado());
-		 System.out.println("Nome da escola é:" +aluno1.getNomeEscola());
-		 System.out.println("Média da nota é: " +aluno1.getMediaNota());
-		 System.out.println("Resultado =  " +(aluno1.getAlunoAprovado()? "Aprovado":
-			 "Reprovado"));
-		 System.out.println("Resultado2: " +aluno1.getAlunoAprovado2() );	
-		 
-		 
-		 
-		 
-		 /* -----------------------------------------------------------------------*/
-		 System.out.println("-------------------------");
-		 System.out.println("-------------------------");
-		 System.out.println("-------------------------");
-		
-		 
-		 
-		 
-		 Aluno aluno2=new Aluno();
-		 aluno2.setNome("Pedro Luiz");
-			aluno2.setIdade(40);
-			aluno2.setDataNascimento("10/08/1998");
-			aluno2.setRegistroGeral("50.465.458.78");
-			aluno2.setNumeroCpf("401.458.985.78");
-			aluno2.setNomeMae("Silvia");
-			aluno2.setNomePai("Marcos");
-			aluno2.setDataMatricula("01/06/2017");
-			aluno2.setSerieMatriculado("7");
-			aluno2.setNomeEscola("Escola JDEV Treinamento");
+	
+	
 			
-		 
-		 
-			System.out.println("Nome é: " +aluno2.getNome());
-			 System.out.println("A idade é: " +aluno2.getIdade());
-			 System.out.println("Data de nascimento: " +aluno2.getDataNascimento());
-			 System.out.println("Número do RG: " +aluno2.getRegistroGeral());
-			 System.out.println("Número do CPF: " +aluno2.getNumeroCpf());
-			 System.out.println("Nome da mãe: " +aluno2.getNomeMae());
-			 System.out.println("Nome do pai: " +aluno2.getNomePai());
-			 System.out.println("Data da matrícula: " +aluno2.getDataMatricula());
-			 System.out.println("Série matriculado: " +aluno2.getSerieMatriculado());
-			 System.out.println("Nome da escola é:" +aluno2.getNomeEscola());
-			 
-		 
-		 
-		 
-		 
-		 
-		 Aluno aluno3=new Aluno(); 
-		 
-		 Aluno aluno4=new Aluno("Maria");
-		 
-		 Aluno aluno5=new Aluno("José..", 50);
-		 
-		
-		 
-		
-		 System.out.println(aluno1.toString());/*descrição do objeto na memoria*/
-		 
-		 System.out.println("Média do aluno:" +aluno1.getMediaNota() );
-		 System.out.println("Resultado" +aluno1.getAlunoAprovado2());
-		 
-		 
-		 
-		 
-		 
-		 
-
-	 
-	 
-	 }
+		 for (int pos=1; pos<=1; pos++) {
+		String nomeDisciplina = JOptionPane.showInputDialog("Nome da disciplina " +pos+ " ?");
+		String notaDisciplina = JOptionPane.showInputDialog("Nota da disciplina "+pos+" ?");
 	
-}
+		 Disciplina disciplina = new Disciplina();
+		
+		
+		disciplina.setDisciplina(nomeDisciplina);
+		disciplina.setNota(Double.valueOf(notaDisciplina));
+		
+		aluno1.getDisciplinas().add(disciplina);
+		
+		
+		
+	}
+		
+	int escolha=	JOptionPane.showConfirmDialog(null, " Deseja remover alguma disciplina? ");
+		              
+		if(escolha==0) {
+			
+			int continuarRemover=0;
+			int posicao= 1;
+			while(continuarRemover==0){
+				
+			
+			
+			String disciplinaRemover = JOptionPane.showInputDialog("Qual a disciplina? 1, 2 , 3 ou 4"   );
+			aluno1.getDisciplinas().remove(Integer.valueOf(disciplinaRemover).intValue()-posicao);
+			posicao++;
+			continuarRemover=JOptionPane.showConfirmDialog(null, "Continuar a remover? ");
+			
+			
+			}
+			
+			
+			
+		}
+	alunos.add(aluno1);
+    }
+		
+		for (Aluno aluno : alunos) {
+			if (aluno.getAlunoAprovado2().equalsIgnoreCase(StatusAluno.APROVADO)) {
+				alunosAprovados.add(aluno);
+				
+			}else
+				if(aluno.getAlunoAprovado2().equalsIgnoreCase(StatusAluno.RECUPERACAO)) {
+					alunosRecuperacao.add(aluno);
+					
+				}else {
+					alunosReprovados.add(aluno);
+				}
+			
+		}
 
+      
+		System.out.println("----------Lista dos aprovados-----------------------" );
+
+		for (Aluno aluno : alunosAprovados) {
+			System.out.println("Resultado=" +aluno.getAlunoAprovado2()+ "com mÃ©dia de:" +aluno.getMediaNota());
+		}
+	
+
+		System.out.println("----------Lista de reprovados-----------------------" );
+
+		for (Aluno aluno : alunosReprovados) {
+			System.out.println("Resultado=" +aluno.getAluno()+ "com mÃ©dia de:" +aluno.getMediaNota());
+		}
+	
+
+		System.out.println("----------Lista dos alunos em recuperaÃ§Ã£o----------------------" );
+
+		for (Aluno aluno : alunosRecuperacao) {
+			System.out.println("Resultado=" +aluno.getAlunoAprovado2()+ "com mÃ©dia de:" +aluno.getMediaNota());
+		}
+	
+	
+	
+	}
+	
+
+	}
+	
+	
+	
+	
+	
+	
+	
+		
+		
+	
+		
+		
+
+
+	
+	
