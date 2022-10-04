@@ -16,8 +16,8 @@ public class Disciplina {
 	public String getDisciplina() {
 		return disciplina;
 	}
-	public void setDisciplina(String disciplina) {
-		this.disciplina = disciplina;
+	public void setDisciplina(String nomeDisciplina) {
+		this.disciplina = nomeDisciplina;
 	}
 	
 	public boolean equals(Object obj) {

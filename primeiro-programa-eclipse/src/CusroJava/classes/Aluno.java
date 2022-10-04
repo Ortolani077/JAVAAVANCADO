@@ -4,8 +4,10 @@ import java.util.ArrayList;
 
 import java.util.List;
 
-public class Aluno {
-	/*Esses são os atributos do Aluno*/
+import cursojava.constantes.StatusAluno;
+
+public class Aluno<String> {
+	/*Esses sï¿½o os atributos do Aluno*/
 	private String nome;
 	private int idade;
 	private String dataNascimento;
@@ -50,8 +52,8 @@ public class Aluno {
 	
 	
 	/* veremos o metodo setters e guetters do objeto*/
-	/* set é para adicionar ou receber dados para os atributos*/
-	/* get é para resgatar ou obter valor do atributo* /
+	/* set ï¿½ para adicionar ou receber dados para os atributos*/
+	/* get ï¿½ para resgatar ou obter valor do atributo* /
 	
 	 */
 
@@ -157,13 +159,13 @@ public String getAlunoAprovado2() {
 	double media = this.getMediaNota();
 	if(media>=50) {
 		if(media>=70) {
-		return "Aluno está aprovado";
+		return (String) StatusAluno.APROVADO;
 		}else { 
-			return " Aluno em recuperação "; 
+			return (String) StatusAluno.RECUPERACAO; 
 		}
 		
 	}else {
-		return "Aluno está reporvado !!!!";
+		return (String) StatusAluno.REPROVADO;
 	}
 	
 	
@@ -173,7 +175,7 @@ public String getAlunoAprovado2() {
 
 
 @Override
-public String toString() {
+public java.lang.String toString() {
 	return "Aluno [nome=" + nome + ", idade=" + idade + ", dataNascimento=" + dataNascimento + ", registroGeral="
 			+ registroGeral + ", numeroCpf=" + numeroCpf + ", nomeMae=" + nomeMae + ", nomePai=" + nomePai
 			+ ", dataMatricula=" + dataMatricula + ", nomeEscola=" + nomeEscola + ", serieMatriculado="
