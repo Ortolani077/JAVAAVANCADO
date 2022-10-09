@@ -6,21 +6,15 @@ import java.util.List;
 
 import cursojava.constantes.StatusAluno;
 
-public class Aluno<String> {
+public class Aluno extends Pessoa {
 	/*Esses s�o os atributos do Aluno*/
-	private String nome;
-	private int idade;
-	private String dataNascimento;
-	private String registroGeral;
-	private String numeroCpf;
-	private String nomeMae;
-	private String nomePai;
+
 	private String dataMatricula;
 	private String nomeEscola;
 	private String serieMatriculado;
+	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 	
 	
-	public List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 	
 	
 	
@@ -211,6 +205,19 @@ public boolean equals(Object obj) {
 	return true;
 }
 
+@Override
+public boolean pessoaMaiorIdade() {
+	
+	return idade >=21;
+
+}
+
+public String msgMaiorIdade () {
+	
+	return this.pessoaMaiorIdade() ? "Aluno maior de idade" : "Aluno menor de idade";
+	
+	
+}
 
 
 }
