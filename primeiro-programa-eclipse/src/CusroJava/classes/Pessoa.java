@@ -4,7 +4,7 @@ package CusroJava.classes;
 /*SUPERCLASS*/
 
 
-public class Pessoa {
+public abstract class Pessoa {
 
 	
 	protected String nome;
@@ -15,6 +15,10 @@ public class Pessoa {
 	protected String nomeMae;
 	protected String nomePai;
 	
+	/*Metodo abbstract que fica na classe pai é 
+	 * obrigatória para classes filhas */
+	
+	public abstract double salario();
 	
 	
 	public String getNome() {

@@ -219,6 +219,12 @@ public String msgMaiorIdade () {
 	
 }
 
+@Override
+public double salario() {
+	// TODO Auto-generated method stub
+	return 1500.90;
+}
+
 
 }
 
