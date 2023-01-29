@@ -2,6 +2,7 @@ package CusroJava.Executavel;
 
 import CusroJava.classes.Aluno;
 import CusroJava.classes.Diretor;
+import CusroJava.classes.Pessoa;
 import CusroJava.classes.Secretario;
 
 public class TestandoClassesFilhas {
@@ -19,11 +20,12 @@ public class TestandoClassesFilhas {
 		Diretor diretor = new Diretor();
 		diretor.setRegistroGeral("45000");
 		diretor.setIdade(50);
-	
+		diretor.setNome(" Alfranio");
+		
 		Secretario secretario = new Secretario();
 		secretario.setExperiencia("Adminitração");
 		secretario.setIdade(18);
-		
+		secretario.setNome("Perseu");
 		
 	
 		
@@ -41,11 +43,20 @@ public class TestandoClassesFilhas {
 	System.out.println("Salário do Diretor é R$ " +diretor.salario());
 	System.out.println("Salário do Secretário é R$ " +secretario.salario());
 	
+	teste(aluno);
+	teste(diretor);
+	teste(secretario);
 	
 	
 	}
 	
-	
+	public static void teste(Pessoa pessoa) {
+		
+		System.out.println("Essa pessoa é demais " +pessoa.getNome()+ 
+				" E o salário dela é R$ " + pessoa.salario());
+		
+		
+	}
 	
 	
 }

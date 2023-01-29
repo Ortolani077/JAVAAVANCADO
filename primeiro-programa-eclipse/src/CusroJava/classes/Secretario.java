@@ -1,12 +1,14 @@
 package CusroJava.classes;
 
-public class Secretario extends Pessoa {
+import cursojava.interfaces.PermitirAcesso;
+
+public class Secretario extends Pessoa implements PermitirAcesso {
 
 	private String registro;
 	private String nivelCargo;
 	private String experiencia;
 	
-	
+
 	
 	
 	
@@ -40,9 +42,14 @@ public class Secretario extends Pessoa {
 		return 1800.80 * 0.9;
 		
 	}
-	
-	
-	
+
+	@Override
+	public boolean autenticar(String login, String senha) {
+		
+		return login.equals("admin") && senha.equals("admin");
+		
+	}
+
 	
 	
 }
