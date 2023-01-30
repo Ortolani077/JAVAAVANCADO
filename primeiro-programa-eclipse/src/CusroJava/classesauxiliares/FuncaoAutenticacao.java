@@ -7,12 +7,18 @@ import cursojava.interfaces.PermitirAcesso;
 
 public class FuncaoAutenticacao {
 
-	public boolean autenticarCursoJava(PermitirAcesso acesso) {
+	
+	private PermitirAcesso permitirAcesso;
+	
+	public boolean autenticar() {
 		
-		return acesso.autenticar();
+		return permitirAcesso.autenticar();
 		
 		
 	}
-	
+	public FuncaoAutenticacao(PermitirAcesso acesso) {
+		this.permitirAcesso= acesso;
+		
+	}
 	
 }
