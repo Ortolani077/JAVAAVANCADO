@@ -1,24 +1,29 @@
 package CusroJava.Executavel;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import java.util.Scanner;
+
 import CusroJava.classes.Aluno;
 import CusroJava.classes.Diretor;
 import CusroJava.classes.Disciplina;
 import CusroJava.classesauxiliares.FuncaoAutenticacao;
+import curso.java.exceção.ExcecaoProcessarNota;
 import cursojava.constantes.StatusAluno;
-
 public class PrimeiraClasseJava {
-
+	@SuppressWarnings("rawtypes")
 	public static  void main(String[]args) {
 		
 		
 		try {
 		
+			lerArquivo();
 		
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
@@ -179,7 +184,7 @@ public class PrimeiraClasseJava {
 	/*aqui*/
 	
 
-		}catch (NumberFormatException e) {
+		}catch (Exception e) {
 			
 			StringBuilder saida= new StringBuilder();
 			
@@ -202,20 +207,24 @@ public class PrimeiraClasseJava {
 		JOptionPane.showMessageDialog(null, "Erro de conversão de números"  + saida.toString());
 		
 		
-		}catch (NullPointerException e) {
-			JOptionPane.showMessageDialog(null, "Ocorreu um Null Pointer exception " +e.getClass() );
-
-		}catch (Exception e) {
-			e.printStackTrace();
+		}finally {/*Sempre é executado ocorrendo erros ou não */
+			JOptionPane.showMessageDialog(null, "Obrigado por usar nosso sistema");
+			
 		}
 		
 	}
 	
+	
+	public static void lerArquivo() throws FileNotFoundException {
+		
+		
+		File fil = new File ("c://lines.txt");
+		Scanner scanner = new Scanner(fil);
+		}
 	}
 	
-	
 
-	
+
 	
 	
 	
