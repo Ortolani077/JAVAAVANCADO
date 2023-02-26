@@ -23,7 +23,7 @@ public class PrimeiraClasseJava {
 		
 		try {
 		
-			lerArquivo();
+			/*lerArquivo();*/
 		
 		String login = JOptionPane.showInputDialog("Informe o login");
 		String senha = JOptionPane.showInputDialog("Informe a senha");
@@ -88,7 +88,7 @@ public class PrimeiraClasseJava {
 		
 		
 		disciplina.setDisciplina( nomeDisciplina);
-		disciplina.setNota(Double.valueOf( notaDisciplina));
+		//disciplina.setNota(Double.valueOf( notaDisciplina));
 		
 		aluno1.getDisciplinas().add(disciplina);
 		

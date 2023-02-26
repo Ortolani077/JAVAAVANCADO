@@ -1,16 +1,19 @@
 package CusroJava.classes;
 
+import java.util.Arrays;
+
 public class Disciplina {
 
-	private double nota;
+	private double[] nota=new double[4];
 	private String disciplina;
 	
 
 	
-	public double getNota() {
+	
+	public double[] getNota() {
 		return nota;
 	}
-	public void setNota(double nota) {
+	public void setNota(double[] nota) {
 		this.nota = nota;
 	}
 	public String getDisciplina() {
@@ -20,6 +23,32 @@ public class Disciplina {
 		this.disciplina = nomeDisciplina;
 	}
 	
+	
+
+	public double getMediaNotas(){
+		double somaTotal=0;
+		for(int pos=0; pos<nota.length; pos++) {
+			
+			somaTotal +=nota[pos];
+			
+			
+		}
+		return somaTotal/ 4;
+		
+	}
+	
+	
+	
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((disciplina == null) ? 0 : disciplina.hashCode());
+		result = prime * result + Arrays.hashCode(nota);
+		return result;
+	}
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -33,11 +62,10 @@ public class Disciplina {
 				return false;
 		} else if (!disciplina.equals(other.disciplina))
 			return false;
-		if (Double.doubleToLongBits(nota) != Double.doubleToLongBits(other.nota))
+		if (!Arrays.equals(nota, other.nota))
 			return false;
 		return true;
 	}
-
 	@Override
 	public String toString() {
 		return "Disciplina [nota=" + nota + ", disciplina=" + disciplina + "]";

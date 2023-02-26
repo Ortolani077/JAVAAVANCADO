@@ -123,7 +123,7 @@ public double getMediaNota() {
 	for (Disciplina disciplina: disciplinas) {
 		
 		
-		somaNotas+= disciplina.getNota();
+		somaNotas+= disciplina.getMediaNotas();
 		
 		
 			
